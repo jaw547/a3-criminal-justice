@@ -48,14 +48,15 @@ article{
 </head>
 <body style ="background-color:solid gray;">
 	<div class="Container">
-	<h1><b>Student Racial Diversity in the United States</b></h1>
+	<h1><b>Student Racial Bullying in the United States</b></h1>
 	
-	<p>	Is there a relationship between student racial diversity and the % of hate crimes reported in a county? </p>
-	
-	<p></p>
+	<p>	Is there a relationship between student racial diversity and the % of hate crimes reported in a county?</p>
+	<p> Is there a relationship between unemployment rates per county and student racial diversity per county?</p>
+	<p> Is there a relationship between racial bullying incidents at schools and hate crimes reported in a state? </p>
 
 	<nav>
 		<ul>
+			<br></br>
 			<br></br>
 			<li><a href="index.html">Home Page</a></li>
 			<li>Jackson's Page</li>
@@ -78,6 +79,7 @@ article{
 
 		<p>This is where the data visualization will go.  I am thinking maybe two charts, one for %hate crimes pr county and one for %school racial diversity per county</p>
 	</article>
+	<br></br>
 
 <h2><b>Example Data Visualization</b></h2>
 <p>Pulls from simple two columned csv file</p>
@@ -132,7 +134,7 @@ g.append("text")
     .attr("fill", "#000")
     .attr("text-anchor", "start")
     .attr("font-weight", "bold")
-    .text("Hate Crime Rate");
+    .text("Unemployment Rate");
 
 g.call(d3.axisBottom(x)
     .tickSize(13)
