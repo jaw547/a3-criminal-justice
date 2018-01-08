@@ -10,9 +10,10 @@ var x = d3.scaleLinear()
     .domain([1, 10])
     .rangeRound([600, 860]);
 
+// Change schemeReds to schemeAnyColor
 var color = d3.scaleThreshold()
     .domain(d3.range(2, 10))
-    .range(d3.schemeBlues[9]);
+    .range(d3.schemeReds[9]);
 
 var g = svg.append("g")
     .attr("class", "key")
