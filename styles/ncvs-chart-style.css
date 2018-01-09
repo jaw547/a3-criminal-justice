@@ -1,0 +1,18 @@
+#ncvs-chart-1 {
+  font: 10px sans-serif;
+  shape-rendering: crispEdges;
+}
+
+#ncvs-chart-1 .axis path,
+#ncvs-chart-1 .axis line {
+  fill: none;
+  stroke: #000;
+}
+ 
+#ncvs-chart-1 path.domain {
+  stroke: none;
+}
+ 
+#ncvs-chart-1 .y .tick line {
+  stroke: #ddd;
+}
