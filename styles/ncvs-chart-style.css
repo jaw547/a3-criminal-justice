@@ -1,18 +1,15 @@
-#ncvs-chart-1 {
-  font: 10px sans-serif;
-  shape-rendering: crispEdges;
+.viz-portfolio-delinquent-status {
+  font-family: helvetica, arial, sans-serif; 
+  margin: 0 auto;
+  font-size: 10px;
+  width: 450px;
+  height: 300px
 }
 
-#ncvs-chart-1 .axis path,
-#ncvs-chart-1 .axis line {
-  fill: none;
-  stroke: #000;
-}
- 
-#ncvs-chart-1 path.domain {
-  stroke: none;
-}
- 
-#ncvs-chart-1 .y .tick line {
-  stroke: #ddd;
-}
+
+  path { fill: #83B0EA;}  
+.domain { 
+    fill: none; 
+    stroke: #000; 
+    stroke-width: 1px; 
+  } 
