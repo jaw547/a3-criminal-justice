@@ -12,8 +12,10 @@
     <title>Crime and Learning</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="styles/bootstrap.min.css" rel="stylesheet">
-    <link href="styles/crdcstyles.css" rel="stylesheet">
+    <link href="styles/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="styles/crdcstyles.css" rel="stylesheet" type="text/css"
+    <!-- D3 Chart Style for NCVS -->
+    <link href="styles/ncvs-chart-style.css" rel="stylesheet" type="text/css">
 
 </head>
 <body>
@@ -45,21 +47,22 @@
 
 <!--Website Body -->
 <div class="jumbotron">
-	<h1><br><b>Crime and Student Learning</b></h1> </div>
+	<h1><br><b>Crime and Learning</b></h1> </div>
 
-<h2>Short description goes here. The data is from x and viz from y.</h2>
+<h2>What NCVS tells us about being a crime victim and learning difficulty.</h2>
 
-<p>Longer description of the data. I hope to use National Crime Victimization Survey to look at correlation between difficulty learning and being a victim of crime.</p>
+<p>The 2016 National Crime Victimization survey asks respondents if they have ever experienced learning difficulty. How does being a victim of crime impact this response?</p>
 
+<h3>Being a Victim in General</h3>
+<div id="chart1"></div>
 <p>Vizualization goes here. Depending on how data looks, will experiment with different visualizations</p>
 
 <p>Credits here.</p>
 
 <!--Scripts go here -->
 <script src="https://d3js.org/d3.v4.min.js"></script>
-<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
-<script src="https://d3js.org/topojson.v2.min.js"></script>
-<script src="scripts/mapscript.js"></script>
+<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<script src="scripts/ncvs-script.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="scripts/bootstrap.min.js"></script>
 <script>window.jQuery || document.write('<script src="styles/jquery.min.js"><\/script>')</script>
