@@ -14,7 +14,6 @@
     <!-- Bootstrap core CSS -->
     <link href="styles/bootstrap.min.css" rel="stylesheet">
     <link href="styles/crdcstyles.css" rel="stylesheet">
-    <link href="policestops_style.css" rel="stylesheet">
 
 </head>
 
@@ -37,7 +36,7 @@
           <ul class="nav navbar-nav">
             <li class="active"><a href="index.html">Home Page</a></li>
             <li><a href="crdc.html">School Racial Bullying</a></li>
-            <li><a href="crime-learning.html">Crime and Learning</a></li>
+            <li><a href="schoolcrime.html">School Crime</a></li>
             <li><a href="policestops.html">Police Stops</a></li>
             <li><a href="trialtrends.html">Trial Trends</a></li>
           </ul>
@@ -54,15 +53,16 @@
   <p>
     "Description of idea, data and visualization"
   </p>    
-  <div class="chart">
-  </div>
+  <img src="~/Development/a3-criminal-justice/policestops-viz/steamgraph.png">
   <a href="index.html"> Back </a>
 
 <!--Scripts go here -->
 
-<script src="http://d3js.org/d3.v2.js"></script>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+<script src="https://d3js.org/topojson.v2.min.js"></script>
+<script src="scripts/mapscript.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="scripts/bootstrap.min.js"></script>
 <script>window.jQuery || document.write('<script src="styles/jquery.min.js"><\/script>')</script>
-<script src="policestops_chart.js"></script>
 </body>
