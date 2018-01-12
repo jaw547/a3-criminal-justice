@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Crime and Learning</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="styles/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="styles/crdcstyles.css" rel="stylesheet" type="text/css"
+    <!-- D3 Chart Style for NCVS -->
+    <link href="styles/ncvs-chart-style.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+
+<!--Navigation Bar-->
+
+ <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Criminal Justice Visualization</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="index.html">Home Page</a></li>
+            <li><a href="crdc.html">School Racial Bullying</a></li>
+            <li><a href="crime-learning.html">Crime and Learning</a></li>
+            <li><a href="policestops.html">Police Stops</a></li>
+            <li><a href="trialtrends.html">Trial Trends</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+<!--Website Body -->
+<div class="jumbotron">
+	<h1><br><b>Crime and Learning</b></h1> </div>
+
+<h2>What NCVS tells us about being a crime victim and learning difficulty.</h2>
+
+<p>The 2016 National Crime Victimization survey asks respondents if they have ever experienced learning difficulty. How does being a victim of crime impact this response?</p>
+
+<h3>Being a Victim in General</h3>
+<div id="chart1"></div>
+<p>Vizualization goes here. Depending on how data looks, will experiment with different visualizations</p>
+
+<p>Credits here.</p>
+
+<!--Scripts go here -->
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<script src="scripts/ncvs-script.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="scripts/bootstrap.min.js"></script>
+<script>window.jQuery || document.write('<script src="styles/jquery.min.js"><\/script>')</script>
+
+</body>
+</html>
