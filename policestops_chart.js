@@ -149,36 +149,50 @@ var graph = d3.csv(csvpath, function(data) {
     .attr('x', 10)
     .attr('y', 220)
     .text('Males')
-    .style('font-size', 15)
+    .style('font-size', 12)
     .style('fill', 'white');
   
   svg.append('text')
     .attr('x', 14)
-    .attr('y', 185)
+    .attr('y', 183)
     .text('Female')
-    .style('font-size', 15)
+    .style('font-size', 12)
     .style('fill', 'white');
 
   svg.append('text')
     .attr('x', 80)
     .attr('y', 175)
     .text('Black/Asian')
-    .style('font-size', 15)
+    .style('font-size', 12)
     .style('fill', 'white');
 
   svg.append('text')
-    .attr('x', 180)
+    .attr('x', 170)
     .attr('y', 165)
     .text('Hispanic')
-    .style('font-size', 15)
+    .style('font-size', 12)
     .style('fill', 'white');
 
   svg.append('text')
     .attr('x', 180)
     .attr('y', 120)
     .text('White')
-    .style('font-size', 15)
+    .style('font-size', 12)
     .style('fill', 'black');
+
+  svg.append('text')
+    .attr('x', 10)
+    .attr('y', 380)
+    .text('Month - Year')
+    .style('font-size', 12)
+    .style('fill', 'black');  
+
+  svg.append('text')
+    .attr('x', 5)
+    .attr('y', 0)
+    .text('Number of police stops related to posession of marijuana')
+    .style('font-size', 12)
+    .style('fill', 'black');  
 
   var vertical = d3.select(".chart")
         .append("div")
