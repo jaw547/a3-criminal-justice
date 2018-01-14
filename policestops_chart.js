@@ -181,17 +181,17 @@ var graph = d3.csv(csvpath, function(data) {
     .style('fill', 'black');
 
   svg.append('text')
-    .attr('x', 10)
-    .attr('y', 380)
-    .text('Month - Year')
-    .style('font-size', 12)
+    .attr('x', 1150)
+    .attr('y', 320)
+    .text('Time')
+    .style('font-size', 20)
     .style('fill', 'black');  
 
   svg.append('text')
-    .attr('x', 5)
+    .attr('x', 10)
     .attr('y', 0)
     .text('Number of police stops related to posession of marijuana')
-    .style('font-size', 12)
+    .style('font-size', 20)
     .style('fill', 'black');  
 
   var vertical = d3.select(".chart")
