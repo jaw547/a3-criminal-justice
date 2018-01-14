@@ -21,7 +21,7 @@ var svg1 = d3.select("#map")
   .attr("height", height1);
 
 // Load in my states data!
-d3.csv("../RaceBullyState.csv", function(data) {
+d3.csv("../assets/RaceBullyState.csv", function(data) {
 	var dataArray = [];
 	for (var d = 0; d < data.length; d++) {
 		dataArray.push(parseFloat(data[d].value))
