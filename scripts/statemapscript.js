@@ -32,7 +32,7 @@ d3.csv("https://jaw547.github.io/a3-criminal-justice/assets/RaceBullyState.csv",
 	var ramp = d3.scaleLinear().domain([minVal,maxVal]).range([lowColor,highColor])
 	
   // Load GeoJSON data and merge with states data
-  d3.json("../us-states.json", function(json) {
+  d3.json("https://jaw547.github.io/a3-criminal-justice/assets/us-states.json", function(json) {
 
   	console.log(json);
     // Loop through each state data value in the .csv file
