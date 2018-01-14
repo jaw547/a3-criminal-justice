@@ -7,12 +7,12 @@ var unemployment = d3.map();
 var path = d3.geoPath();
 
 var x = d3.scaleLinear()
-    .domain([1, 10])
+    .domain([0, 10])
     .rangeRound([600, 860]);
 
 // Change schemeReds to schemeAnyColor
 var color = d3.scaleThreshold()
-    .domain(d3.range(2, 10))
+    .domain(d3.range(0, 10))
     .range(d3.schemeReds[9]);
 
 var g = svg.append("g")
@@ -42,7 +42,7 @@ g.append("text")
     .text("Unemployment Rate");
 
 g.call(d3.axisBottom(x)
-    .tickSize(13)
+    .tickSize(10)
     .tickFormat(function(x, i) { return i ? x : x + "%"; })
     .tickValues(color.domain()))
   .select(".domain")
@@ -66,6 +66,7 @@ function ready(error, us) {
     .append("title")
       .text(function(d) { return d.rate + "%"; });
 
+//Adds state outlines
   svg.append("path")
       .datum(topojson.mesh(us, us.objects.states, function(a, b) { return a !== b; }))
       .attr("class", "states")

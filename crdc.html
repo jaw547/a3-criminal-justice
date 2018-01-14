@@ -12,8 +12,9 @@
     <title>Civil Rights Data Visualization</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="styles/bootstrap.min.css" rel="stylesheet">
     <link href="styles/crdcstyles.css" rel="stylesheet">
+    <link href="styles/statemapstyle.css" rel="stylesheet">
+    <link href="styles/bootstrap.css" rel="stylesheet">
 
 </head>
 <body>
@@ -33,7 +34,7 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="index.html">Home Page</a></li>
+            <li><a href="index.html">Home Page</a></li>
             <li><a href="crdc.html">School Racial Bullying</a></li>
             <li><a href="crime-learning.html">Crime and Learning</a></li>
             <li><a href="policestops.html">Police Stops</a></li>
@@ -43,45 +44,159 @@
       </div>
     </nav>
 
+
 <!--Website Body -->
 
-	<div class="jumbotron">
-	<h1><br><b>Student Racial Bullying in the United States</b></h1> </div>
+ 
+  <div class="jumbotron">
+	<h1><br><b>Thought Students in the South Experienced the Most Racial Bullying?  Think Again.</b></h1> </div>
+	 
+  <div class="panel-body">
+  <blockquote class="blockquote">
+    <p class="lead">In 2013-14, Students living in the Midwest reported the highest percentages of racial bullying experiences.</p></blockquote>
 	
-	<h2><b>Research Questions</b></h2>
+  <h2><b>Background</b></h2>
 
-	<p>	Is there a relationship between student racial diversity and the % of hate crimes reported in a county?</p>
-	<p> Is there a relationship between unemployment rates per county and student racial diversity per county?</p>
-	<p> Is there a relationship between racial bullying incidents at schools and hate crimes reported in a state? </p>
+	<blockquote class="blockquote"><p class="lead"> Between 25% to 35% of U.S. students report having been bullied in school. 16% of these report being builled for their race.  With known side-effects such as depressions, anxiety, and reduced academic achieement, addressing the root of these incidences is crucial.
+    <br>
+    <br>
+  The 2014-15 school year marked the first time that minority student enrollment in public schools surpassed that of white students, and people of color are expected to become the majority in U.S. by 2020. Racial bullying needs to be addressed by leaders in the counties and states which reported high rates in 2013-14. </p></blockquote>
 
-	<h2><b>Background</b></h2>
+	<h2><b>Data Source</b></h2>
 
-	<p>The Civil Rights Data Collection is...(descriptive paragraph)</p>
+	<blockquote class="blockquote"><p class="lead">The Civil Rights Data Collection is a bi-annual survey required of all public local education agencies by the U.S. Department of Education Office of Civil Rights since 1968.  Its stated purpose is as an enforcement and monitoring tool used to ensure that recipients of Federal Title I funds do not discriminate and to investigate whether civil rights laws have been violated in schools</p></blockquote>
 
-	<h2><b>Data Visualization</b></h2>
+  <blockquote class="blockquote"><p class="lead">It is a self-reported survey which reports on 1,930 data points measured from 95,507 schools, representing over 50 million American students.  Learn more about the CRDC <a href="https://ocrdata.ed.gov">here</a></p></blockquote></div>
 
-	<p>This is where I will explain the data visualization.  Ideally a heat map of student racial diversity per county.  Perhaps merge this dataset with the hate crime data set and link the two together.  Is there a correlation between student diversity and the percent of hate crimes? </p>
+<!--Website Div for State Map -->
+<div id="map">
+  <h2><b>Average Racial Bullying Percentages By State</b></h2>
+    <blockquote class="blockquote">
+    <p class="lead">4 out of the top 5 states with the highest student racial bullying are in the Midwest </p></blockquote>
+</div>
 
-	<p>This is where the data visualization will go.  I am thinking maybe two charts, one for %hate crimes pr county and one for %school racial diversity per county</p>
+<!--Website Div for Table -->
+<div id="table">
 
-	<h2><b>Example Data Visualization</b></h2>
-	<p>Pulls from simple two columned csv file</p>
-	<p>Source code:https://bl.ocks.org/mbostock/4060606</p>
+    <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Rank #</th>
+        <th>State</th>
+        <th>Region</th>
+        <th>% Students Racially Bullied</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>Missouri</td>
+        <td>Midwest</td>
+        <td>0.43%</td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>Montana</td>
+        <td>Midwest</td>
+        <td>0.29%</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td>Nebraska</td>
+        <td>Midwest</td>
+        <td>0.26%</td>
+      </tr>
+      <tr>
+        <th scope="row">4</th>
+        <td>North Dakota</td>
+        <td>Midwest</td>
+        <td>0.24%</td>
+      </tr>
+      <tr>
+        <th scope="row">5</th>
+        <td>Arkansas</td>
+        <td>South</td>
+        <td>0.20%</td>
+      </tr>
 
-</body>
+    </tbody>
+  </table>
 
-<!--Define SVG canvas size -->
+</div>
+  <h2><b>Average Racial Bullying % By County</b></h2>
+
+    <blockquote class="blockquote">
+    <p class="lead">Info about Counties </p></blockquote>
+        <table class="table table-hover">
+
+<!--Append County SVG -->
 <svg width="960" height="600"></svg>
 
+<!--County Table-->
+    <thead>
+      <tr>
+        <th>Rank #</th>
+        <th>State</th>
+        <th>County</th>
+        <th>Region</th>
+        <th>% Students Racially Bullied</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>State Name</td>
+        <td>County Name</td>
+        <td>Region Name</td>
+        <td>%</td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>State Name</td>
+        <td>County Name</td>
+        <td>Region Name</td>
+        <td>%</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td>State Name</td>
+        <td>County Name</td>
+        <td>Region Name</td>
+        <td>%</td>
+      </tr>
+      <tr>
+        <th scope="row">4</th>
+        <td>State Name</td>
+        <td>County Name</td>
+        <td>Region Name</td>
+        <td>%</td>
+      </tr>
+      <tr>
+        <th scope="row">5</th>
+        <td>State Name</td>
+        <td>County Name</td>
+        <td>Region Name</td>
+        <td>%</td>
+      </tr>
+
+    </tbody>
+  </table>
+</body>
+
+<!--Define SVG canvas size-->
+
+
+
+
 <!--Scripts go here -->
+
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
 <script src="https://d3js.org/topojson.v2.min.js"></script>
-<script src="scripts/mapscript.js"></script>
 <script src="https://d3js.org/d3-queue.v2.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="scripts/bootstrap.min.js"></script>
-
-<script>window.jQuery || document.write('<script src="styles/jquery.min.js"><\/script>')</script>
+<script src="scripts/mapscript.js"></script>
+<script src="scripts/statemapscript.js"></script>
 
 </html>

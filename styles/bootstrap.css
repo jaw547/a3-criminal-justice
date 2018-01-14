@@ -1077,7 +1077,7 @@ th {
           box-sizing: border-box;
 }
 html {
-  font-size: 10px;
+  font-size: 14px;
 
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
@@ -4327,6 +4327,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   padding-top: 10px;
   padding-bottom: 10px;
   line-height: 20px;
+  font-size: 2em;
 }
 @media (max-width: 767px) {
   .navbar-nav .open .dropdown-menu {

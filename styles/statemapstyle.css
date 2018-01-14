@@ -1,0 +1,23 @@
+/* This css formats the legend for the State D3 Map */
+
+/* legend font style*/
+body{
+	font: 11px sans-serif;
+	background-color: #ffffff;
+}
+/*legend position style*/
+.legend {
+	position:relative;
+	left:0px;
+	top:-100px;
+}
+
+.axis text{
+	font: 10px sans-serif;
+}
+
+.axis line, .axis path{
+	fill: none;
+	stroke: #000
+	shape-rendering: crispEdges;
+}
