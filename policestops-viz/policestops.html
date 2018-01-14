@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html class="gr_policestops_com">
 <head>
-	<meta charset="utf-8">
+  <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
@@ -9,15 +9,14 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Crime and Learning</title>
+    <title>Police Stops</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="styles/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="styles/crdcstyles.css" rel="stylesheet" type="text/css"
-    <!-- D3 Chart Style for NCVS -->
-    <link href="styles/ncvs-chart-style.css" rel="stylesheet" type="text/css">
+    <link href="styles/bootstrap.min.css" rel="stylesheet">
+    <link href="styles/crdcstyles.css" rel="stylesheet">
 
 </head>
+
 <body>
 
 <!--Navigation Bar-->
@@ -37,7 +36,7 @@
           <ul class="nav navbar-nav">
             <li class="active"><a href="index.html">Home Page</a></li>
             <li><a href="crdc.html">School Racial Bullying</a></li>
-            <li><a href="crime-learning.html">Crime and Learning</a></li>
+            <li><a href="schoolcrime.html">School Crime</a></li>
             <li><a href="policestops.html">Police Stops</a></li>
             <li><a href="trialtrends.html">Trial Trends</a></li>
           </ul>
@@ -46,33 +45,24 @@
     </nav>
 
 <!--Website Body -->
+
 <div class="jumbotron">
-	<h1><strong>Being a Victim of Crime and Trying to Learn</strong></h1></div>
-<div class ="panel-body">
-<section>
-<h4>What the 2016 National Crime Victimization Survey tells us about experiencing crime and the ability to learn.</h4>
+  <h1><br><b>Lame Duck Police?</b></h1> </div>
+  <h2>Legalization: What Happened After Referendum and Before Implementation</h2>
+  <h3>Were the Colarado police lame ducks between November 2012 and January 2014 in regard to marijuana violations?</h3>
+  <p>
+    "Description of idea, data and visualization"
+  </p>    
+  <img src="~/Development/a3-criminal-justice/policestops-viz/steamgraph.png">
+  <a href="index.html"> Back </a>
 
-
-<h3>Have you been a victim of a crime?</h3>
-<p>Being a victim of a crime appears to have a negative effect on self-reported ability to learn. Gender and race don't show any apparent difference for this effect.</p>
-<figure><div id="chart1"></div></figure>
-
-<h3>What about victims of forced sexual contact?</h3>
-<p>Reporting being a victim of forced sexual contact is associated with a higher percent of people reporting difficulty learning. This is especially true for men relative to women.</p>
-<figure><div id="chart2"></div></figure>
-
-
-<h6>Data is from <a href="http://www.icpsr.umich.edu/icpsrweb/NACJD/studies/36828">2016 National Crime Victimization Survey.</a> Visualization adapted <a href="https://codepen.io/benlister/pen/bNeLQy">from Ben Lister.</a></h6>
-</section>
-</div>
 <!--Scripts go here -->
+
 <script src="https://d3js.org/d3.v4.min.js"></script>
-<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-<script src="scripts/ncvs-script1.js"></script>
-<script src="scripts/ncvs-script2.js"></script>
+<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+<script src="https://d3js.org/topojson.v2.min.js"></script>
+<script src="scripts/mapscript.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="scripts/bootstrap.min.js"></script>
 <script>window.jQuery || document.write('<script src="styles/jquery.min.js"><\/script>')</script>
-
 </body>
-</html>

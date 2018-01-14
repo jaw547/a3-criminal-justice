@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="gr_policestops_com">
 <head>
-	<meta charset="utf-8">
+  <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
@@ -14,10 +14,12 @@
     <!-- Bootstrap core CSS -->
     <link href="styles/bootstrap.min.css" rel="stylesheet">
     <link href="styles/crdcstyles.css" rel="stylesheet">
+    <link href="policestops_style.css" rel="stylesheet">
 
 </head>
 
-<body style = "background: url(https://d14rmgtrwzf5a.cloudfront.net/sites/default/files/joints_shutterstock-52960849.jpg)">
+<body>
+
 <!--Navigation Bar-->
 
  <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -46,24 +48,25 @@
 <!--Website Body -->
 
 <div class="jumbotron">
-	<h1><br><b>Lame Duck Policing!</b></h1> </div>
-	
-	<h2>Are people in California and Massachusetts being stopped by the police for Marihuana posession even though it will be legal soon?</h2>
-	<h3>Let's find out...</h3>
-	<p>
-		"Description of idea, data and visualization"
-	</p>		
-	<p>
-		"Visualization goes here"
-	</p>	
-	<a href="back.html"> Back </a>
-
+  <h1><br><b>Lame Duck Drug Policy</b></h1> </div>
+  <h2>Marijuana: What Happened After the Referendum and Before Legalization in Colorado</h2>
+  <p>
+		Even though marijuana posession was still officially a criminal offense in Colorado from November 2012 to January 2014, the period between the legalization referendum and the actual implementation, the number of police stops because of this violation dropped significantly compared to past months.
+  </p>    
+  <div class="chart">
+  </div>
+  <a href="index.html"> Home </a>
+  <br>
+  <a href="https://openpolicing.stanford.edu/data/"> Data: Stanford Open Policing Project 2017 </a>
+  <br>
+  <a href="http://bl.ocks.org/WillTurman/4631136"> D3: Interactive Steamgraph </a>
+  <br>
+  
 <!--Scripts go here -->
-<script src="https://d3js.org/d3.v4.min.js"></script>
-<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
-<script src="https://d3js.org/topojson.v2.min.js"></script>
-<script src="scripts/mapscript.js"></script>
+
+<script src="http://d3js.org/d3.v2.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="scripts/bootstrap.min.js"></script>
 <script>window.jQuery || document.write('<script src="styles/jquery.min.js"><\/script>')</script>
+<script src="policestops_chart.js"></script>
 </body>
