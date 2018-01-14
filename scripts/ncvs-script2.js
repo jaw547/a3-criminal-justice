@@ -1,104 +1,131 @@
+var margin = {top: 20, right: 160, bottom: 35, left: 30};
+
+var width = 960 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom;
+
+var svg = d3.select("div#chart2")
+  .append("svg")
+  .attr("width", width + margin.left + margin.right)
+  .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+  .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
 var data = [
-  { "sex": "Male-No", "NLD": 96.74, "LD": 4.26},
-  { "sex": "Male-Yes", "NLD": 70, "LD": 30},
-  { "sex": "Female-No", "NLD": 95.53, "LD": 4.47},
-  { "sex": "Female-Yes", "NLD": 88.89, "LD": 11.11},
+  { "sex": "Male-No", "No Learning Difficulty": 96.74, "Learning Difficulty": 4.26},
+  { "sex": "Male-Yes", "No Learning Difficulty": 70, "Learning Difficulty": 30},
+  { "sex": "Female-No", "No Learning Difficulty": 95.53, "Learning Difficulty": 4.47},
+  { "sex": "Female-Yes", "No Learning Difficulty": 88.89, "Learning Difficulty": 11.11},
 ];
 
-  var margin = {
-        top: 20,
-        right: 20,
-        bottom: 40,
-        left: 60
-      },
-        width = 450 - margin.left - margin.right,
-        height = 315 - margin.top - margin.bottom,
-        that = this;
+  // Transpose the data into layers
+var dataset = d3.layout.stack()(["Learning Difficulty","No Learning Difficulty"].map(function(LD) {
+  return data.map(function(d) {
+    return {x: (d.sex), y: +d[LD]};
+  });
+}));
+
+// Set x, y and colors
+var x = d3.scale.ordinal()
+  .domain(dataset[0].map(function(d) { return d.x; }))
+  .rangeRoundBands([10, width-10], 0.02);
+
+var y = d3.scale.linear()
+  .domain([0, d3.max(dataset, function(d) {  return d3.max(d, function(d) { return d.y0 + d.y; });  })])
+  .range([height, 0]);
+
+var colors = ["#b33040", "#f7e6e8"];
 
 
-      var x = d3.scale.ordinal().rangeRoundBands([0, width], .3);
+// Define and draw axes
+var yAxis = d3.svg.axis()
+  .scale(y)
+  .orient("left")
+  .ticks(5)
+  .tickSize(-width, 0, 0)
+  .tickFormat( function(d) { return d } );
 
-      var y = d3.scale.linear().rangeRound([height, 0]);
+var xAxis = d3.svg.axis()
+  .scale(x)
+  .orient("bottom");
 
-      var color = d3.scale.category10();
+svg.append("g")
+  .attr("class", "y axis")
+  .call(yAxis);
 
-      var xAxis = d3.svg.axis().scale(x).orient("bottom");
-
-      var yAxis = d3.svg.axis().scale(y).orient("left").tickFormat(d3.format(".0%"));
-
-      var svg = d3.select("div#chart2").append("svg").attr("width", width + margin.left + margin.right).attr("height", height + margin.top + margin.bottom).append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
-      color.domain(d3.keys(data[0]).filter(function (key) {
-        return key !== "sex";
-      }));
-
-
-      data.forEach(function (d) {
-        var y0 = 0;
-
-        d.rates = color.domain().map(function (name) {
-          console.log();;
-          return {
-            name: name,
-            y0: y0,
-            y1: y0 += +d[name],
-            amount: d[name]
-          };
-        });
-        d.rates.forEach(function (d) {
-          d.y0 /= y0;
-          d.y1 /= y0;
-        });
-
-        console.log(data);
-      });
-
-      data.sort(function (a, b) {
-        return b.rates[0].y1 - a.rates[0].y1;
-      });
-
-      x.domain(data.map(function (d) {
-        return d.sex;
-      }));
-
-      svg.append("g").attr("class", "x axis").attr("transform", "translate(0," + height + ")").call(xAxis);
-
-      svg.append("g").attr("class", "y axis").call(yAxis);
-
-      var sex = svg.selectAll(".sex").data(data).enter().append("g").attr("class", "sex").attr("transform", function (d) {
-        return "translate(" + x(d.sex) + ",0)";
-      });
-
-      sex.selectAll("rect").data(function (d) {
-        return d.rates;
-      }).enter().append("rect").attr("width", x.rangeBand()).attr("y", function (d) {
-        return y(d.y1);
-      }).attr("height", function (d) {
-        return y(d.y0) - y(d.y1);
-      }).style("fill", function (d) {
-        return color(d.name);
-      }).on('mouseover', function (d) {
-        var total_amt;
-        total_amt = d.amount;
+svg.append("g")
+  .attr("class", "x axis")
+  .attr("transform", "translate(0," + height + ")")
+  .call(xAxis);
 
 
+// Create groups for each series, rects for each segment 
+var groups = svg.selectAll("g.cost")
+  .data(dataset)
+  .enter().append("g")
+  .attr("class", "cost")
+  .style("fill", function(d, i) { return colors[i]; });
 
-        console.log('----');
-        d3.select(".chart-tip").style('opacity', '1').html('Amount: <strong>$' + that.numberWithCommas(total_amt.toFixed(2)) + '</strong>');
+var rect = groups.selectAll("rect")
+  .data(function(d) { return d; })
+  .enter()
+  .append("rect")
+  .attr("x", function(d) { return x(d.x); })
+  .attr("y", function(d) { return y(d.y0 + d.y); })
+  .attr("height", function(d) { return y(d.y0) - y(d.y0 + d.y); })
+  .attr("width", x.rangeBand())
+  .on("mouseover", function() { tooltip.style("display", null); })
+  .on("mouseout", function() { tooltip.style("display", "none"); })
+  .on("mousemove", function(d) {
+    var xPosition = d3.mouse(this)[0] - 15;
+    var yPosition = d3.mouse(this)[1] - 25;
+    tooltip.attr("transform", "translate(" + xPosition + "," + yPosition + ")");
+    tooltip.select("text").text(d.y);
+  });
 
-      }).on('mouseout', function () {
-        d3.select(".chart-tip").style('opacity', '0');
-      });
 
-      var legend = svg.selectAll(".legend").data(color.domain().slice().reverse()).enter().append("g").attr("class", "legend").attr("transform", function (d, i) {
-        return "translate(" + i * -70 + ",283)";
-      });
+// Draw legend
+var legend = svg.selectAll(".legend")
+  .data(colors)
+  .enter().append("g")
+  .attr("class", "legend")
+  .attr("transform", function(d, i) { return "translate(30," + i * 19 + ")"; });
+ 
+legend.append("rect")
+  .attr("x", width - 18)
+  .attr("width", 18)
+  .attr("height", 18)
+  .style("fill", function(d, i) {return colors.slice().reverse()[i];});
+ 
+legend.append("text")
+  .attr("x", width + 5)
+  .attr("y", 9)
+  .attr("dy", ".35em")
+  .style("text-anchor", "start")
+  .text(function(d, i) { 
+    switch (i) {
+      case 0: return "No Learning Diff.";
+      case 1: return "Learning Diff.";
+    }
+  });
 
 
-      legend.append("rect").attr("x", width + -53).attr("width", 10).attr("height", 10).style("fill", color);
+// Prep the tooltip bits, initial display is hidden
+var tooltip = svg.append("g")
+  .attr("class", "tooltip")
+  .style("display", "none");
+    
+tooltip.append("rect")
+  .attr("width", 30)
+  .attr("height", 20)
+  .attr("fill", "white")
+  .style("opacity", 0.5);
 
-      legend.append("text").attr("x", width - 40).attr("y", 5).attr("width", 40).attr("dy", ".35em").style("text-anchor", "start").text(function (d) {
-        return d;
-      });
+tooltip.append("text")
+  .attr("x", 15)
+  .attr("dy", "1.2em")
+  .style("text-anchor", "middle")
+  .attr("font-size", "12px")
+  .attr("font-weight", "bold");
+
 
 
