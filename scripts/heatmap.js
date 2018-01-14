@@ -101,32 +101,50 @@
 			'y': height - 908
 		})
 		.text('Year');
+
+	svg.append("text")
+		.attr({
+			'class': 'label',
+			'font-size': 16,
+			'x': -65,
+			'y': height - 270
+		})
+		.text('Data Source:');
+
+	svg.append("text")
+		.attr({
+			'class': 'label',
+			'font-size': 16,
+			'x': -65,
+			'y': height - 250
+		})
+		.text('Original D3 Visualization:');
 	});
 
-		var	legend = d3.select("div#legend")
-			.append("svg")
-				.attr("width", width + margin.left + margin.right)
-				.attr("height", height + margin.top + margin.bottom)
-			.append("g")
-				.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+var	legend = d3.select("div#legend")
+	.append("svg")
+		.attr("width", width + margin.left + margin.right)
+		.attr("height", height + margin.top + margin.bottom)
+	.append("g")
+		.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 				
 		//Append a defs (for definition) element to your SV
-		var defs = legend.append("defs");
+var defs = legend.append("defs");
 
 		//Append a linearGradient element to the defs and give it a unique id
-		var linearGradient = defs.append("linearGradient")
-			.attr("id", "linear-gradient");
+var linearGradient = defs.append("linearGradient")
+	.attr("id", "linear-gradient");
 
 		//Draw the rectangle and fill with gradient
-		legend.append("rect")
-			.attr("width", 200)
-			.attr("height", 20)
-			.style("fill", "url(#linear-gradient)");
+legend.append("rect")
+	.attr("width", 200)
+	.attr("height", 20)
+	.style("fill", "url(#linear-gradient)");
 
 		//Append multiple color stops by using D3's data/enter step
-		linearGradient.selectAll("stop") 
-			.data( colorScale.range() )                  
-			.enter().append("stop")
-			.attr("offset", function(d,i) { return i/(colorScale.range().length-1); })
-			.attr("stop-color", function(d) { return d; });
+linearGradient.selectAll("stop") 
+	.data( colorScale.range() )                  
+	.enter().append("stop")
+	.attr("offset", function(d,i) { return i/(colorScale.range().length-1); })
+	.attr("stop-color", function(d) { return d; });
 
