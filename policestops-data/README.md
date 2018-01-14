@@ -1,9 +1,9 @@
 # a3-criminal-justice
 
 For the visualization on police stops regarding Marijuana violations in Colorado,
-I used data from the Stanford Open Policing Project (https://openpolicing.stanford.edu/data/). 
+I used data from the Stanford Open Policing Project (https://stacks.stanford.edu/file/druid:py883nd2578/CO-clean.csv.gz). 
 
-To clean the data, I followed the next steps:
+To clean it, I followed the next steps:
 
 1. I downloaded the data into a CVS format.
 2. Imported the data into STATA and transformed into a DTA file. This was due to Excel and R 
