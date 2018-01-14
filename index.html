@@ -14,6 +14,7 @@
     <!-- Bootstrap core CSS -->
     <link href="styles/bootstrap.min.css" rel="stylesheet">
     <link href="styles/crdcstyles.css" rel="stylesheet">
+    <link href="styles/business-frontpage.css" rel="stylesheet">
 
 </head>
 <body>
@@ -28,11 +29,11 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Criminal Justice Visualization</a>
+          <a class="navbar-brand" href="#">Criminal Justice Visualizations</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="index.html">Home Page</a></li>
+            <li><a href="index.html">Home Page</a></li>
             <li><a href="crdc.html">School Racial Bullying</a></li>
             <li><a href="crime-learning.html">Crime and Learning</a></li>
             <li><a href="policestops.html">Police Stops</a></li>
@@ -44,18 +45,101 @@
 
 <!--Website Body -->
 <div class="jumbotron">
-	<h1><br><b>Criminal Justice</b></h1> </div>
+	<h1><b>Criminal Justice in the United States</b></h1> </div>
 
-<h2>Short description of website.</h2>
+<div class="container">
 
-<p>Welcome text.</p>
+      <div class="row">
+        <div class="col-sm-8">
+          <h2 class="mt-4"><b>Visualizing Contemporary Justice Issues</b></h2>
+          <p class="lead">Our team explored data ranging from student surveys representing 50 million american students to police stop logs to present a story of the state of American Criminal Justice.</p>
+          <p class="lead">After reviewing the findings, we invite you to take action!</p>
+          <p>
+            <br><a class="btn btn-primary btn-lg" href="https://contactingcongress.org">Contact your Congressman &raquo;</a>
+          </p>
+        </div>
+        <div class="col-sm-4">
+          <h2 class="mt-4">About Us</h2>
+          <address>
+            We are a diverse team of four Harvard University Students with a shared passion for criminal justice.
+            <br>
+            <br>In each of our visualizations below, we explored a public dataset to find a key takeaway which provides insight into the state of justice in our country.
+            <br>
+          </address>
+          <address>
+            <abbr title="Phone">P:</abbr>
+            (123) 456-7890
+            <br>
+            <abbr title="Email">E:</abbr>
+            <a href="mailto:#">name@example.com</a>
+          </address>
+        </div>
+      </div>
+      <!-- /.row -->
 
-<ul>
-	<li><a href = "crdc.html">CRDC</a></li>
-	<li><a href = "policestops.html">Police Stops</a></li>
-	<li><a href = "crime-learning.html">Crime and Learning</a></li>
-	<li><a href = "trialtrends.html">Trial Trends</a></li>
-</ul>
+      <div class="row">
+        <div class="col-sm-4 my-4">
+          <div class="card">
+            <img class="card-img-top" src="http://placehold.it/300x200" alt="">
+            <div class="card-body">
+              <h4 class="card-title">School Racial Bullying</h4>
+              <p class="card-text">We examined the 2013-14 Civil Rights Data Collection Survey to uncover where students are experiencing the most racial bullying in the United States.</p>
+            </div>
+            <div class="card-footer">
+              <a href="crdc.html" class="btn btn-primary">Find Out More!</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 my-4">
+          <div class="card">
+            <img class="card-img-top" src="http://placehold.it/300x200" alt="">
+            <div class="card-body">
+              <h4 class="card-title">Crime and Learning</h4>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque sequi doloribus totam ut praesentium aut.</p>
+            </div>
+            <div class="card-footer">
+              <a href="crime-learning.html" class="btn btn-primary">Find Out More!</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 my-4">
+          <div class="card">
+            <img class="card-img-top" src="http://placehold.it/300x200" alt="">
+            <div class="card-body">
+              <h4 class="card-title">Police Stops</h4>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
+            </div>
+            <div class="card-footer">
+              <a href="policestops.html" class="btn btn-primary">Find Out More!</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 my-4">
+          <div class="card">
+            <img class="card-img-top" src="http://placehold.it/300x200" alt="">
+            <div class="card-body">
+              <h4 class="card-title">Trial Trends</h4>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque sequi doloribus totam ut praesentium aut.</p>
+            </div>
+            <div class="card-footer">
+              <a href="trialtrends.html" class="btn btn-primary">Find Out More!</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">A DPI-691 Project from Harvard University</p>
+      </div>
+      <!-- /.container -->
+    </footer>
 
 
 <!--Scripts go here -->
@@ -65,8 +149,6 @@
 <script src="scripts/mapscript.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="scripts/bootstrap.min.js"></script>
-<script>window.jQuery || document.write('<script src="styles/jquery.min.js"><\/script>')</script>
-<script src="/scripts/main.js"></script>
 
 </body>
 </html>
