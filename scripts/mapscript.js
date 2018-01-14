@@ -2,7 +2,7 @@ var svg = d3.select("svg"),
     width = +svg.attr("width"),
     height = +svg.attr("height");
 
-var unemployment = d3.map();
+var bully = d3.map();
 
 var path = d3.geoPath();
 
@@ -50,7 +50,7 @@ g.call(d3.axisBottom(x)
 
 d3.queue()
     .defer(d3.json, "https://d3js.org/us-10m.v1.json")
-    .defer(d3.tsv, "unemployment.tsv", function(d) { unemployment.set(d.id, +d.rate); })
+    .defer(d3.tsv, "https://jaw547.github.io/a3-criminal-justice/assets/countybully.tsv", function(d) { bully.set(d.id, +d.rate); })
     .await(ready);
 
 function ready(error, us) {
@@ -61,7 +61,7 @@ function ready(error, us) {
     .selectAll("path")
     .data(topojson.feature(us, us.objects.counties).features)
     .enter().append("path")
-      .attr("fill", function(d) { return color(d.rate = unemployment.get(d.id)); })
+      .attr("fill", function(d) { return color(d.rate = bully.get(d.id)); })
       .attr("d", path)
     .append("title")
       .text(function(d) { return d.rate + "%"; });
