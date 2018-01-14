@@ -12,7 +12,7 @@ var x = d3.scaleLinear()
 
 // Change schemeReds to schemeAnyColor
 var color = d3.scaleThreshold()
-    .domain(d3.range(0, 10))
+    .domain(d3.range(1, 10))
     .range(d3.schemeReds[9]);
 
 var g = svg.append("g")
@@ -39,7 +39,7 @@ g.append("text")
     .attr("fill", "#000")
     .attr("text-anchor", "start")
     .attr("font-weight", "bold")
-    .text("Unemployment Rate");
+    .text("Racial Bullying Rate");
 
 g.call(d3.axisBottom(x)
     .tickSize(10)
