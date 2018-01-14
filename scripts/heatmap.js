@@ -83,4 +83,50 @@
 		.attr("transform", function (d) {
 			return "rotate(-65)";
 		});
+
+	svg.append("text")
+		.attr({
+			'class': 'label',
+			'font-size': 18,
+			'x': -65,
+			'y': height - 865
+		})
+		.text('Jurisdiction');
+
+	svg.append("text")
+		.attr({
+			'class': 'label',
+			'font-size': 18,
+			'x': 150,
+			'y': height - 908
+		})
+		.text('Year');
 	});
+
+		var	legend = d3.select("div#legend")
+			.append("svg")
+				.attr("width", width + margin.left + margin.right)
+				.attr("height", height + margin.top + margin.bottom)
+			.append("g")
+				.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+				
+		//Append a defs (for definition) element to your SV
+		var defs = legend.append("defs");
+
+		//Append a linearGradient element to the defs and give it a unique id
+		var linearGradient = defs.append("linearGradient")
+			.attr("id", "linear-gradient");
+
+		//Draw the rectangle and fill with gradient
+		legend.append("rect")
+			.attr("width", 200)
+			.attr("height", 20)
+			.style("fill", "url(#linear-gradient)");
+
+		//Append multiple color stops by using D3's data/enter step
+		linearGradient.selectAll("stop") 
+			.data( colorScale.range() )                  
+			.enter().append("stop")
+			.attr("offset", function(d,i) { return i/(colorScale.range().length-1); })
+			.attr("stop-color", function(d) { return d; });
+
