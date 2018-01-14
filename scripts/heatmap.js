@@ -7,6 +7,9 @@
 	var width = 1000 - margin.right - margin.left,
 	  height = 1100 - margin.top - margin.bottom;
 
+	var lowColor = "#f4f4f4"
+	var highColor = '#bc2a66'
+
 	var formatDate = d3.time.format("%Y-%m-%d");
 	
 	d3.csv('guiltyplea.csv', function ( response ) {
@@ -47,7 +50,7 @@
 
 	var colorScale = d3.scale.threshold()
 		.domain([0.75, 0.80, 0.85, 0.90, 0.95, 1])
-		.range(["#ffcccc", "#ff9999", "#ff6666", "#ff1a1a", "#cc0000", "#b30000", "#800000"]);
+		.range(["#f6d5e3", "#ecacc7", "#d9598e", "#bc2a66", "#912150", "#681839", "#3e0e22"]);
 
 	var svg = d3.select('div#heatmap')
 		.append("svg")
@@ -156,17 +159,18 @@
 	// Adding footnotes
 	svg.append("text")
 		.attr({
-			'class': 'label',
-			'font-size': 16,
+			'class': 'footnotes',
+			'font-size': 12,
 			'x': -65,
 			'y': height - 365
 		})
 		.text('Data Source: Federal Justice Statistics Resource Center (FJSRC), Bureau of Justice Statistics - https://www.bjs.gov/fjsrc/');
-
+	    //.on("click", function() { window.open("http://google.com"); });
+	    
 	svg.append("text")
 		.attr({
-			'class': 'label',
-			'font-size': 16,
+			'class': 'footnotes',
+			'font-size': 12,
 			'x': -65,
 			'y': height - 345
 		})
@@ -174,8 +178,8 @@
 	
 	svg.append("text")
 		.attr({
-			'class': 'label',
-			'font-size': 16,
+			'class': 'footnotes',
+			'font-size': 12,
 			'x': -65,
 			'y': height - 325
 		})
