@@ -19,7 +19,11 @@ var svg1 = d3.select("#map")
   .append("svg")
   .attr("width", width1)
   .attr("height", height1);
-
+		
+var div=d3.select("body").append("div")
+	.attr("class", "tooltip")
+	.style("opacity",0);
+		
 // Load in my states data!
 d3.csv("https://jaw547.github.io/a3-criminal-justice/assets/RaceBullyState.csv", function(data) {
 	var dataArray = [];
@@ -60,7 +64,8 @@ d3.csv("https://jaw547.github.io/a3-criminal-justice/assets/RaceBullyState.csv",
     }
 
     console.log(json.features);
-    // Bind the data to the SVG and create one path per GeoJSON feature
+
+    // Bind the data to the SVG and create one path per GeoJSON feature 
     svg1.selectAll("path")
       .data(json.features)
       .enter()
@@ -69,7 +74,11 @@ d3.csv("https://jaw547.github.io/a3-criminal-justice/assets/RaceBullyState.csv",
       .style("stroke", "#fff")
       .style("stroke-width", "1")
       .style("fill", function(d) { return ramp(d.properties.value) });
-    
+
+//get data value
+var value = d.properties.value;
+
+
 		// add a legend
 		var w = 140, h = 300;
 
@@ -114,5 +123,6 @@ d3.csv("https://jaw547.github.io/a3-criminal-justice/assets/RaceBullyState.csv",
 			.attr("class", "y axis")
 			.attr("transform", "translate(41,10)")
 			.call(yAxis)
+
   });
 });
