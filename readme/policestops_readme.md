@@ -1,12 +1,17 @@
 # Police stops data
 
 For the visualization on police stops regarding Marijuana violations in Colorado,
-I used data from the Stanford Open Policing Project (https://stacks.stanford.edu/file/druid:py883nd2578/CO-clean.csv.gz). 
+we used data from the Stanford Open Policing Project (https://stacks.stanford.edu/file/druid:py883nd2578/CO-clean.csv.gz). 
 
 ## Objective
-Answer the questions: Did the police continue stopping people regarding marijuana violations in Colorado during the period 
-before legalization and after referendum? If so, who did they stop? The main aim of this study is to explore whether police stops operate under racial biases during a period during which there are no incentives to prosecute marijuana violations. As such, we believe the 
-time frame between referendum and legalization serve as a propitious natural experiment to observe trends of this sort. 
+Answer the questions: 
+* Did the police continue stopping people regarding marijuana violations in Colorado during the period 
+before legalization and after referendum? 
+* If so, who did they stop? 
+The main aim of this study is to explore whether police stops operate under racial biases 
+during a period during which there are no incentives to prosecute marijuana violations. 
+As such, we believe the time frame between referendum and legalization serve as a propitious 
+natural experiment to observe trends of this sort. 
 
 # To clean the data, I followed the next steps:
 
