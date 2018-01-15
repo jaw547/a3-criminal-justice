@@ -157,31 +157,36 @@
 		.call(xAxis);
 
 	// Adding footnotes
-	svg.append("text")
+	 svg.append("a")
+	   	.attr("xlink:href", "https://www.bjs.gov/fjsrc/")
+		.append("text")
 		.attr({
 			'class': 'footnotes',
 			'font-size': 12,
-			'x': -65,
+			'x': -85,
 			'y': height - 365
 		})
-		.text('Data Source: Federal Justice Statistics Resource Center (FJSRC), Bureau of Justice Statistics - https://www.bjs.gov/fjsrc/');
-	    //.on("click", function() { window.open("http://google.com"); });
+		.text('Click for the data source - Federal Justice Statistics Resource Center (FJSRC), Bureau of Justice Statistics.');
 	    
-	svg.append("text")
+	svg.append("a")
+		.attr("xlink:href", "https://bl.ocks.org/Bl3f/cdb5ad854b376765fa99")
+		.append("text")
 		.attr({
 			'class': 'footnotes',
 			'font-size': 12,
-			'x': -65,
+			'x': -85,
 			'y': height - 345
 		})
-		.text('Original D3 heatmap: https://bl.ocks.org/Bl3f/cdb5ad854b376765fa99');
+		.text('Click for original D3 heatmap.');
 	
-	svg.append("text")
+	svg.append("a")
+		.attr("xlink:href", "https://www.visualcinnamon.com/2016/05/smooth-color-legend-d3-svg-gradient.html")
+		.append("text")
 		.attr({
 			'class': 'footnotes',
 			'font-size': 12,
-			'x': -65,
+			'x': -85,
 			'y': height - 325
 		})
-		.text('Original D3 legend https://www.visualcinnamon.com/2016/05/smooth-color-legend-d3-svg-gradient.html');});
+		.text('Click for original D3 legend.');});
 		
