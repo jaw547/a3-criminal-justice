@@ -133,11 +133,11 @@
 	svg.append("text")
 		.attr({
 			'class': 'footnotes',
-			'font-size': 10,
-			'x': 50,
+			'font-size': 12,
+			'x': 45,
 			'y': height - 1070
 		})
-		.text('Percentage who pleaded guilty out of total number of defendants convicted');
+		.text('Percentage of guilty pleas out of total number of defendants convicted');
 	
 	//Set scale for x-axis
 	var xScale = d3.scale.linear()
