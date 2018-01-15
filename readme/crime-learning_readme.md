@@ -1,17 +1,17 @@
-#Crime & Learning
+# Crime & Learning
 * Project Overview
 * Data Source
 * Data Transformation in Tableau
 * Visualization Customization
 
-##Project Overview
+## Project Overview
 
 I used the 2016 National Crime Victimization Survey Person Record-Type File (linked below). The research question I hoped to answer was: Is there a link between being a victim of crime and performance in school? Given the nature of the data, the question became more broad. Is there a link between being a victim of crime and difficulty learning?
 
-##Data Source
+## Data Source
 I downloaded the raw NCVS dataset file (DS3: Person Record-Type File) as a TSV. [The data and additional information about the NCVS data can be found here.](http://www.icpsr.umich.edu/icpsrweb/NACJD/studies/36828)
 
-##Data Transformation in Tableau
+## Data Transformation in Tableau
 The data transformation occurred almost entirely in Tableau. I have documented the steps below, and was unable to replicate the steps in Python/Pandas despite my best efforts.
 
 1. Identify and alias relevant variables in dataset
@@ -53,7 +53,7 @@ The data transformation occurred almost entirely in Tableau. I have documented t
 	- X-axis --> Gender | Yes No Crime or Forced Sex
 	- Colors --> LearningDifficulty? Y/N
 
-##Visualization Customization
+## Visualization Customization
 I adapted my visualization from this [Stacked bar chart Block by Michael Stanaland.](http://bl.ocks.org/mstanaland/6100713)
 
 I changed the data source by manually entering percentages from the Tableau stacked bar chart. The data for each chart are below:
