@@ -27,3 +27,11 @@ body {
 .card {
   height: 100%;
 }
+
+.margin-bottom {
+  margin-bottom: 40px;
+}
+
+.margin-bottom-small{
+  margin-bottom:-10px;
+}
