@@ -137,7 +137,7 @@
 			'x': 20,
 			'y': height - 1070
 		})
-		.text('Percentage convicted through guilty pleas out of total number of defendants');
+		.text('Percentage who pleaded guilty out of total number of defendants convicted');
 	
 	//Set scale for x-axis
 	var xScale = d3.scale.linear()
