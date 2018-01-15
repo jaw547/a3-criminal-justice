@@ -49,8 +49,8 @@
 		.orient("left");
 
 	var colorScale = d3.scale.threshold()
-		.domain([0.75, 0.80, 0.85, 0.90, 0.95, 1])
-		.range(["#f6d5e3", "#ecacc7", "#d9598e", "#bc2a66", "#912150", "#681839", "#3e0e22"]);
+		.domain([0.85, 0.875, 0.90, 0.925, 0.95, 0.975, 1])
+		.range(["#faeaf1", "#f6d5e3", "#ecacc7", "#d9598e", "#bc2a66", "#912150", "#681839", "#3e0e22"]);
 
 	var svg = d3.select('div#heatmap')
 		.append("svg")
@@ -132,17 +132,17 @@
    // Adding legend label
 	svg.append("text")
 		.attr({
-			'class': 'label',
-			'font-size': 16,
-			'x': 30,
+			'class': 'footnotes',
+			'font-size': 8,
+			'x': 20,
 			'y': height - 1070
 		})
-		.text('Percentage of defendants convicted through guilty pleas');
+		.text('Percentage convicted through guilty pleas out of total number of defendants');
 	
 	//Set scale for x-axis
 	var xScale = d3.scale.linear()
 		 .range([0, 200])
-		 .domain([.6,1]);
+		 .domain([.8,1]);
 
 	//Define x-axis
 	var xAxis = d3.svg.axis()
