@@ -10,16 +10,14 @@
 
 The dataset "guiltyplea.csv" was transformed as a part of the final project of the course DPI-691M Data and Programming for Policymakers, led by Professor Dhrumil Mehta.
 
-Team members include: Michael Ho, Marta Garnelo, Daniela Philipson, Jackson Wright.
-
-Marta Garnelo conducted the data transformation described in this document.
+Team members include: Michael Ho, Marta Garnelo, Daniela Philipson and Jackson Wright. Marta Garnelo conducted the data transformation described in this document.
 
 ## Aim
-Transform the dataset to a format in which it can be inputed into a D3 heatmap. The code for the D3 visualization was obtained from the following website: https://bl.ocks.org/Bl3f/cdb5ad854b376765fa99 
+Transform the dataset to a format in which it can be inputed into a D3.js heatmap. The code for the D3 visualization chosen was obtained from the following website: https://bl.ocks.org/Bl3f/cdb5ad854b376765fa99 
 
 # Data source
 
-The data was obtained from the website of the Federal Justice Statistics Resource Center (FJSRC), Bureau of Justice Statistics (https://www.bjs.gov/fjsrc/). I selected the year (1998-2014), the variable "Outcome for a defendant in a case" and added the column "U.S. Federal Judicial District".
+The data was obtained from the website of the Federal Justice Statistics Resource Center (FJSRC), Bureau of Justice Statistics (https://www.bjs.gov/fjsrc/). I selected the year (1998-2014), the variable "Outcome for a defendant in a case", added the column "U.S. Federal Judicial District" and downloaded the file. 
 
 # Trasformation steps
 
@@ -35,24 +33,24 @@ The judicial districts were the table's columns and the different categories for
 
 1. Installed package sxpose and set working directory.
 
-2. Imported the database for year 1998 in .xlsx.
+2. Imported the database for the year 1998 in .xlsx.
 
 3. Prepared the dataset to be transposed.
 
-* Changed the name of the first observation of the first column to "state", so that it could be an appropiate variable name.
-* Changed the name of the variable identifying cases where the defendant was convicted to a variable name valid in Stata.
-* Dropped unnecesary columns (N, Missing/Unknown, Total).
-* Replaced missing values "*" with the "5". In the original files it said that numbers under 10 were not shown to avoid disclosing confidential information. 
+* Changed the name of the first observation of the first column to "state", so that it could be an appropiate variable name for the variable capturing the name of the judicial district.
+* Changed the name of the variables identifying cases where the defendant was convicted to variable names valid in Stata ('guiltyplea', 'nolo_contendere', 'jurytial' and 'benchtrial').
+* Dropped unnecesary variables (N, Missing/Unknown, Total).
+* Replaced missing values "*" with "5". The original files said that when the number of cases under a particular category was less than 10, the number was not displayed to avoid disclosing confidential information. 
 
 4. Transposed the database - this resulted in a dataset where the columns were the variables identifying court outcomes and the name of the federal judicial distric figured in the first column, under the variable "state". 
 
-5. Generated "total" variable which added all cases of defendants convicted. 
+5. Generated "total" variable which added the variables 'guiltyplea', 'nolo_contendere', 'jurytial' and 'benchtrial' - all identifying cases where the defendants were convicted. 
 
-6. Turned the "state" variable"(originally a string) into a numberic variable, which assigned consecutive numbers to each judicial district
+6. Turned the "state" variable"(originally a string) into a numeric variable, which assigned consecutive numbers to each judicial district
 
-7. Assigned the same numerical value for the variable "state" to all judicial districts part of the same State.
+7. Assigned the same numerical value within the variable "state" to all judicial districts part of the same State.
 
-8. Collapsed the database, so that there was one observation per State and the number of cases under different outcome categories reflected the sum of all cases in the State (sum of all cases in the judicial districts within the State). 
+8. Collapsed the database, so that there was one observation per State and the number of cases under different outcome categories reflected the sum of all cases in the State (sum of all cases accross judicial districts in the same State). 
 
 9. Turned the "state" variable back into a string and changed some of the observations' values so that it represented State names and not judicial districts (i.e. Alabama, instead of Alabama Middle).
 
