@@ -1,4 +1,4 @@
-# a3-criminal-justice
+# Police stops data
 
 For the visualization on police stops regarding Marijuana violations in Colorado,
 I used data from the Stanford Open Policing Project (https://stacks.stanford.edu/file/druid:py883nd2578/CO-clean.csv.gz). 
