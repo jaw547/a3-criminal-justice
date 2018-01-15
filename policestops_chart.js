@@ -181,7 +181,7 @@ var graph = d3.csv(csvpath, function(data) {
     .style('fill', 'black');
 
   svg.append('text')
-    .attr('x', 1150)
+    .attr('x', 1100)
     .attr('y', 320)
     .text('Time')
     .style('font-size', 20)
