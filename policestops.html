@@ -14,7 +14,7 @@
     <!-- Bootstrap core CSS -->
     <link href="styles/bootstrap.min.css" rel="stylesheet">
     <link href="styles/crdcstyles.css" rel="stylesheet">
-    <link href="policestops_style.css" rel="stylesheet">
+    <link href="styles/policestops_style.css" rel="stylesheet">
 
 </head>
 
@@ -47,10 +47,11 @@
 
 <!--Website Body -->
 
-<div class="jumbotron">
-  <h1><br><b>Lame Duck Marijuana in Colorado</b></h1> </div>
+<div class="jumbotron">    
+  <h1 style="text-align:center"><br><b>Lame Duck Marijuana in Colorado</b></h1> </div>
+  <div class="col-sm-10 col-sm-offset-1">
   <h2>Background</h2>
-  <div class="panel-body">
+  <div class="panel-body"> 
   <blockquote class="blockquote">
   <p class = "lead">
   By asking the questions: 
@@ -72,6 +73,7 @@
   <blockquote class="blockquote">
   <p class = "lead">
   Even though marijuana posession was still officially a criminal offense in Colorado from November 2012 to January 2014, the period between the referendum on legalization and the actual enforcement, the number of police stops because of this violation dropped significantly compared to past months. 
+</p>
 </div>
 <div class="chart">
 </div>
@@ -80,8 +82,7 @@
     The original HTML for the D3 state visualization is <b><a href="http://bl.ocks.org/WillTurman/4631136">here.</a></b>
   <br>
    The original Stanford Open Policing Data for Colorado is <b><a href="https://openpolicing.stanford.edu/data/">here.</a></b>
-</div>
-  
+</div>  
 <!--Scripts go here -->
 
 <script src="https://d3js.org/d3.v2.js"></script>
@@ -89,3 +90,5 @@
 <script src="scripts/bootstrap.min.js"></script>
 <script src="policestops_chart.js"></script>
 </body>
+
+
