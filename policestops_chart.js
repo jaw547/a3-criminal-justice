@@ -1,4 +1,4 @@
-chart("CO_marijuana.csv", "pink");
+chart("policestops-chart/CO_marijuana.csv", "pink");
 
 var datearray = [];
 var colorrange = [];
