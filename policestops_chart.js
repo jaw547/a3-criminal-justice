@@ -148,7 +148,7 @@ var graph = d3.csv(csvpath, function(data) {
   svg.append('text')
     .attr('x', 10)
     .attr('y', 220)
-    .text('Males')
+    .text('Male')
     .style('font-size', 12)
     .style('fill', 'white');
   
