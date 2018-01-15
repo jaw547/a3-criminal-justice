@@ -1,5 +1,5 @@
-	var cellwidth = 20,
-		cellheight = 10
+	var cellwidth = 28,
+		cellheight = 11
 		fillwidth = cellwidth - 1,
 		fillheight = cellheight - 1,
 		margin = {top: 120, right: 20, bottom: 20, left: 150};
@@ -91,16 +91,16 @@
 		.attr({
 			'class': 'label',
 			'font-size': 18,
-			'x': -65,
+			'x': -40,
 			'y': height - 965
 		})
-		.text('Jurisdiction');
+		.text('State');
 
 	svg.append("text")
 		.attr({
 			'class': 'label',
 			'font-size': 18,
-			'x': 150,
+			'x': 200,
 			'y': height - 1008
 		})
 		.text('Year');
@@ -117,7 +117,7 @@
 		.attr("width", 200)
 		.attr("height", 15)
 		.attr({
-			'x': 55,
+			'x': 105,
 			'y': height - 1060
 			})
 		.style("fill", "url(#linear-gradient)");
@@ -133,8 +133,8 @@
 	svg.append("text")
 		.attr({
 			'class': 'footnotes',
-			'font-size': 8,
-			'x': 20,
+			'font-size': 10,
+			'x': 50,
 			'y': height - 1070
 		})
 		.text('Percentage who pleaded guilty out of total number of defendants convicted');
@@ -153,7 +153,7 @@
 	//Set up X axis
 	svg.append("g")
 		.attr("class", "axis")  //Assign "axis" class
-		.attr("transform", "translate(55,-85)")
+		.attr("transform", "translate(105,-85)")
 		.call(xAxis);
 
 	// Adding footnotes

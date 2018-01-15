@@ -64,7 +64,13 @@ The judicial districts were the table's columns and the different categories for
 
 14. Repeated the process for the remaining datasets corresponding to years 1999 - 2014.
 
-15. Appended databases and saved in .csv format. 
+15. Appended databases.
+
+16. Dropped U.S. territories.
+
+17. Changed variable names to fit those of the D3.js script.
+
+18. Saved in .csv format. 
 
 # Appendix - Stata code (sample for one year)
 
