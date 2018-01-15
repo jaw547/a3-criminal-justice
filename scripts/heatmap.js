@@ -7,9 +7,6 @@
 	var width = 1000 - margin.right - margin.left,
 	  height = 1100 - margin.top - margin.bottom;
 
-	var lowColor = "#f4f4f4"
-	var highColor = '#bc2a66'
-
 	var formatDate = d3.time.format("%Y-%m-%d");
 	
 	d3.csv('guiltyplea.csv', function ( response ) {
@@ -28,7 +25,7 @@
 
 	var xScale = d3.scale.ordinal()
 		.domain(x_elements)
-		.rangeBands([0, x_elements.length * (cellwidth)]);
+		.rangeBands([0, x_elements.length * cellwidth]);
 
 	var xAxis = d3.svg.axis()
 		.scale(xScale)
