@@ -1,14 +1,11 @@
-	var cellwidth = 20,
-		cellheight = 10
+	var cellwidth = 28,
+		cellheight = 11
 		fillwidth = cellwidth - 1,
 		fillheight = cellheight - 1,
 		margin = {top: 120, right: 20, bottom: 20, left: 150};
 		
 	var width = 1000 - margin.right - margin.left,
 	  height = 1100 - margin.top - margin.bottom;
-
-	var lowColor = "#f4f4f4"
-	var highColor = '#bc2a66'
 
 	var formatDate = d3.time.format("%Y-%m-%d");
 	
@@ -28,7 +25,7 @@
 
 	var xScale = d3.scale.ordinal()
 		.domain(x_elements)
-		.rangeBands([0, x_elements.length * (cellwidth)]);
+		.rangeBands([0, x_elements.length * cellwidth]);
 
 	var xAxis = d3.svg.axis()
 		.scale(xScale)
@@ -49,8 +46,8 @@
 		.orient("left");
 
 	var colorScale = d3.scale.threshold()
-		.domain([0.75, 0.80, 0.85, 0.90, 0.95, 1])
-		.range(["#f6d5e3", "#ecacc7", "#d9598e", "#bc2a66", "#912150", "#681839", "#3e0e22"]);
+		.domain([0.85, 0.875, 0.90, 0.925, 0.95, 0.975, 1])
+		.range(["#faeaf1", "#f6d5e3", "#ecacc7", "#d9598e", "#bc2a66", "#912150", "#681839", "#3e0e22"]);
 
 	var svg = d3.select('div#heatmap')
 		.append("svg")
@@ -91,16 +88,16 @@
 		.attr({
 			'class': 'label',
 			'font-size': 18,
-			'x': -65,
+			'x': -40,
 			'y': height - 965
 		})
-		.text('Jurisdiction');
+		.text('State');
 
 	svg.append("text")
 		.attr({
 			'class': 'label',
 			'font-size': 18,
-			'x': 150,
+			'x': 200,
 			'y': height - 1008
 		})
 		.text('Year');
@@ -117,7 +114,7 @@
 		.attr("width", 200)
 		.attr("height", 15)
 		.attr({
-			'x': 55,
+			'x': 105,
 			'y': height - 1060
 			})
 		.style("fill", "url(#linear-gradient)");
@@ -132,17 +129,17 @@
    // Adding legend label
 	svg.append("text")
 		.attr({
-			'class': 'label',
-			'font-size': 16,
-			'x': 30,
+			'class': 'footnotes',
+			'font-size': 12,
+			'x': 45,
 			'y': height - 1070
 		})
-		.text('Percentage of defendants convicted through guilty pleas');
+		.text('Percentage of guilty pleas out of total number of defendants convicted');
 	
 	//Set scale for x-axis
 	var xScale = d3.scale.linear()
 		 .range([0, 200])
-		 .domain([.6,1]);
+		 .domain([.8,1]);
 
 	//Define x-axis
 	var xAxis = d3.svg.axis()
@@ -153,7 +150,7 @@
 	//Set up X axis
 	svg.append("g")
 		.attr("class", "axis")  //Assign "axis" class
-		.attr("transform", "translate(55,-85)")
+		.attr("transform", "translate(105,-85)")
 		.call(xAxis);
 
 	// Adding footnotes

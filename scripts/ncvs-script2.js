@@ -1,7 +1,7 @@
-var margin = {top: 20, right: 160, bottom: 35, left: 30};
+var margin = {top: 20, right: 160, bottom: 35, left: 40};
 
-var width = 960 - margin.left - margin.right,
-    height = 500 - margin.top - margin.bottom;
+var width = 800 - margin.left - margin.right,
+    height = 350 - margin.top - margin.bottom;
 
 var svg = d3.select("div#chart2")
   .append("svg")
@@ -11,10 +11,10 @@ var svg = d3.select("div#chart2")
   .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 var data = [
-  { "sex": "Male-No", "No Learning Difficulty": 96.74, "Learning Difficulty": 4.26},
-  { "sex": "Male-Yes", "No Learning Difficulty": 70, "Learning Difficulty": 30},
-  { "sex": "Female-No", "No Learning Difficulty": 95.53, "Learning Difficulty": 4.47},
-  { "sex": "Female-Yes", "No Learning Difficulty": 88.89, "Learning Difficulty": 11.11},
+  { "sex": "Male-No", "No Learning Difficulty": "95.74", "Learning Difficulty": "4.26"},
+  { "sex": "Male-Yes", "No Learning Difficulty": "70", "Learning Difficulty": "30"},
+  { "sex": "Female-No", "No Learning Difficulty": "95.53", "Learning Difficulty": "4.47"},
+  { "sex": "Female-Yes", "No Learning Difficulty": "88.89", "Learning Difficulty": "11.11"},
 ];
 
   // Transpose the data into layers
@@ -42,7 +42,7 @@ var yAxis = d3.svg.axis()
   .orient("left")
   .ticks(5)
   .tickSize(-width, 0, 0)
-  .tickFormat( function(d) { return d } );
+  .tickFormat( function(d) { return d + "%" } );
 
 var xAxis = d3.svg.axis()
   .scale(x)
