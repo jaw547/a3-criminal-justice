@@ -12,8 +12,8 @@ var x = d3.scaleLinear()
 
 // Change schemeReds to schemeAnyColor
 var color = d3.scaleThreshold()
-    .domain(d3.range(1, 10))
-    .range(d3.schemeReds[9]);
+    .domain([0, 0.1, 0.3, 0.5, 1, 2, 3, 5, 10])
+    .range(d3.schemeBuPu[9]);
 
 var g = svg.append("g")
     .attr("class", "key")
@@ -32,25 +32,25 @@ g.selectAll("rect")
     .attr("width", function(d) { return x(d[1]) - x(d[0]); })
     .attr("fill", function(d) { return color(d[0]); });
 
-g.append("text")
+ g.append("text")
     .attr("class", "caption")
     .attr("x", x.range()[0])
     .attr("y", -6)
     .attr("fill", "#000")
     .attr("text-anchor", "start")
     .attr("font-weight", "bold")
-    .text("Racial Bullying Rate");
+    .text("Racial Bullying Rate - %");
 
 g.call(d3.axisBottom(x)
     .tickSize(10)
-    .tickFormat(function(x, i) { return i ? x : x + "%"; })
+//    .tickFormat(function(x, i) { return i ? x : x + "%"; })
     .tickValues(color.domain()))
   .select(".domain")
     .remove();
 
 d3.queue()
     .defer(d3.json, "https://d3js.org/us-10m.v1.json")
-    .defer(d3.tsv, "https://jaw547.github.io/a3-criminal-justice/assets/countybully.tsv", function(d) { bully.set(d.id, +d.rate); })
+    .defer(d3.tsv, "../assets/countybully.tsv", function(d) { bully.set(d.id, +d.rate); })
     .await(ready);
 
 function ready(error, us) {
