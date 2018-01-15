@@ -12,7 +12,7 @@ The dataset "guiltyplea.csv" was transformed as a part of the final project of t
 
 Team members include: Michael Ho, Marta Garnelo, Daniela Philipson, Jackson Wright.
 
-Marta Garnelo performed the data transformation described in this document and the corresponding visualization visualization (files: heatmap.js, trialtrends.html and trialstyles.css). 
+Marta Garnelo conducted the data transformation described in this document.
 
 ## Aim
 Transform the dataset to a format in which it can be inputed into a D3 heatmap. The code for the D3 visualization was obtained from the following website: https://bl.ocks.org/Bl3f/cdb5ad854b376765fa99 
