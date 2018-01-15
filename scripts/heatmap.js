@@ -7,6 +7,9 @@
 	var width = 1000 - margin.right - margin.left,
 	  height = 1100 - margin.top - margin.bottom;
 
+	var lowColor = "#f4f4f4"
+	var highColor = '#bc2a66'
+
 	var formatDate = d3.time.format("%Y-%m-%d");
 	
 	d3.csv('guiltyplea.csv', function ( response ) {
@@ -47,7 +50,7 @@
 
 	var colorScale = d3.scale.threshold()
 		.domain([0.75, 0.80, 0.85, 0.90, 0.95, 1])
-		.range(["#ffcccc", "#ff9999", "#ff6666", "#ff1a1a", "#cc0000", "#b30000", "#800000"]);
+		.range(["#f6d5e3", "#ecacc7", "#d9598e", "#bc2a66", "#912150", "#681839", "#3e0e22"]);
 
 	var svg = d3.select('div#heatmap')
 		.append("svg")
@@ -154,30 +157,36 @@
 		.call(xAxis);
 
 	// Adding footnotes
-	svg.append("text")
+	 svg.append("a")
+	   	.attr("xlink:href", "https://www.bjs.gov/fjsrc/")
+		.append("text")
 		.attr({
-			'class': 'label',
-			'font-size': 16,
-			'x': -65,
+			'class': 'footnotes',
+			'font-size': 12,
+			'x': -85,
 			'y': height - 365
 		})
-		.text('Data Source: Federal Justice Statistics Resource Center (FJSRC), Bureau of Justice Statistics - https://www.bjs.gov/fjsrc/');
-
-	svg.append("text")
+		.text('Click for the data source - Federal Justice Statistics Resource Center (FJSRC), Bureau of Justice Statistics.');
+	    
+	svg.append("a")
+		.attr("xlink:href", "https://bl.ocks.org/Bl3f/cdb5ad854b376765fa99")
+		.append("text")
 		.attr({
-			'class': 'label',
-			'font-size': 16,
-			'x': -65,
+			'class': 'footnotes',
+			'font-size': 12,
+			'x': -85,
 			'y': height - 345
 		})
-		.text('Original D3 heatmap: https://bl.ocks.org/Bl3f/cdb5ad854b376765fa99');
+		.text('Click for original D3 heatmap.');
 	
-	svg.append("text")
+	svg.append("a")
+		.attr("xlink:href", "https://www.visualcinnamon.com/2016/05/smooth-color-legend-d3-svg-gradient.html")
+		.append("text")
 		.attr({
-			'class': 'label',
-			'font-size': 16,
-			'x': -65,
+			'class': 'footnotes',
+			'font-size': 12,
+			'x': -85,
 			'y': height - 325
 		})
-		.text('Original D3 legend https://www.visualcinnamon.com/2016/05/smooth-color-legend-d3-svg-gradient.html');});
+		.text('Click for original D3 legend.');});
 		

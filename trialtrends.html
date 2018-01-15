@@ -13,51 +13,49 @@
 
 		<!-- Bootstrap core CSS -->
 		<link href="styles/bootstrap.min.css" rel="stylesheet">
+		<!-- CSS for my chart -->
 		<link href="styles/trialstyles.css" rel="stylesheet" type="text/css">
-
 </head>
 <body>
 
-<style>
-body {
-		background-color: lightgrey;
-}
-</style>
-
 <!--Navigation Bar-->
 
+ 
  <nav class="navbar navbar-inverse navbar-fixed-top">
-			<div class="container">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<a class="navbar-brand" href="#">Criminal Justice Visualization</a>
-				</div>
-				<div id="navbar" class="collapse navbar-collapse">
-					<ul class="nav navbar-nav">
-						<li class="active"><a href="index.html">Home Page</a></li>
-						<li><a href="crdc.html">School Racial Bullying</a></li>
-						<li><a href="crime-learning.html">Crime and Learning</a></li>
-						<li><a href="policestops.html">Police Stops</a></li>
-						<li><a href="trialtrends.html">Trial Trends</a></li>
-					</ul>
-				</div>
-			</div>
-		</nav>
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Criminal Justice Visualizations</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="index.html">Home Page</a></li>
+            <li><a href="crdc.html">School Racial Bullying</a></li>
+            <li><a href="crime-learning.html">Crime and Learning</a></li>
+            <li><a href="policestops.html">Police Stops</a></li>
+            <li><a href="trialtrends.html">Trial Trends</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
 
 <!--Website Body -->
 <div class="jumbotron">
-	<h1><br><b>Goodbye to the Adversarial System: Recent Trends in Criminal Trials</b></h1> </div>
+	<h1 style="text-align:center"><br><b>Goodbye to the Adversarial System: Recent Trends in Criminal Trials</b></h1> </div>
+
+<div class="panel-body">
+<blockquote class="blockquote">
+	<p class="lead">Over the past 20 years...</p></blockquote>
 
 <h2 style="color:#FDFEFE;">Description of what the data shows</h2>
 
 <div id="heatmap"></div>
-
-<a style="color:#FDFEFE;" href="index.html"> Home Page </a>
 
 <!--Scripts go here -->
 <script src="https://d3js.org/d3.v3.min.js"></script>
