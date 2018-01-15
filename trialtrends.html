@@ -22,64 +22,68 @@
 
  
  <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Criminal Justice Visualizations</a>
-        </div>
-        <div id="navbar" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="index.html">Home Page</a></li>
-            <li><a href="crdc.html">School Racial Bullying</a></li>
-            <li><a href="crime-learning.html">Crime and Learning</a></li>
-            <li><a href="policestops.html">Police Stops</a></li>
-            <li><a href="trialtrends.html">Trial Trends</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#">Criminal Justice Visualizations</a>
+				</div>
+				<div id="navbar" class="collapse navbar-collapse">
+					<ul class="nav navbar-nav">
+						<li><a href="index.html">Home Page</a></li>
+						<li><a href="crdc.html">School Racial Bullying</a></li>
+						<li><a href="crime-learning.html">Crime and Learning</a></li>
+						<li><a href="policestops.html">Lame Duck Marijuana in Colorado</a></li>
+						<li><a href="trialtrends.html">Trial Trends</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
 
 
 <!--Website Body -->
 <div class="jumbotron">
 	<h1 style="text-align:center"><br><b>Goodbye to the Adversarial System: <br> An increasing number of defendants are convicted without a trial</b></h1> </div>
 
-<div class="panel-body">
+<div class="col-sm-10 col-sm-offset-1">
 
-<h2><b>Background</b></h2>
+	<div class="panel-body">
 
-<blockquote class="blockquote">
+	<h2><b>Background</b></h2>
 
-	<p class="lead">Over the past 20 years, the number of ... In 1998 ...., in 2014, the national average was 97.87%, while the State with the highest proportion of convictions due to guilty pleas was New Mexico with 99.65% 
-  
-  This is concerning for a number of reasons: It is one-sided, it is not subject to the oversight it should, it can lead to false confessions. 
+	<blockquote class="blockquote">
 
-  </p></blockquote>
+		<p class="lead">Over the past 20 years, the number of ... In 1998 ...., in 2014, the national average was 97.87%, while the State with the highest proportion of convictions due to guilty pleas was New Mexico with 99.65% 
+		
+		This is concerning for a number of reasons: It is one-sided, it is not subject to the oversight it should, it can lead to false confessions. 
 
-<h2>Data Source</h2> 
+		</p></blockquote>
 
-<blockquote class="blockquote">
+	<h2>Data Source</h2> 
 
-  <p class="lead"> 
-    The data used in this page was compilled by the Bureau of Justice Statistics, through its Federal Justice Statistics Resource Center (FJSRC). The source database includes information describing cases processed in the federal criminal justice system, including information on suspects, defendants, 
+	<blockquote class="blockquote">
 
-    The Federal Criminal Case Processing Statistics (FCCPS) is a tool data analysis tool made available at BJS' website to analyze federal case processing data
+		<p class="lead"> 
+			The data used in this page was compilled by the Bureau of Justice Statistics, through its Federal Justice Statistics Resource Center (FJSRC). The source database includes information describing cases processed in the federal criminal justice system, including information on suspects, defendants, 
 
-    Learn more about the FCCPS here.
-  </p>
-</blockquote>
-  
-<h2><b>Defendants convicted as a result of a guilty plea</b></h2>
+			The Federal Criminal Case Processing Statistics (FCCPS) is a tool data analysis tool made available at BJS' website to analyze federal case processing data
 
-<blockquote class="blockquote">
-  <p class="lead"> The proportion of defendants convicted as a result of a guilty plea has increased steadily over the past 20 years. </p></blockquote>
+			Learn more about the FCCPS here.
+		</p>
+	</blockquote>
+		
+	<h2><b>Defendants convicted as a result of a guilty plea</b></h2>
 
-<div id="heatmap"></div>
+	<blockquote class="blockquote">
+		<p class="lead"> The proportion of defendants convicted as a result of a guilty plea has increased steadily over the past 20 years. </p></blockquote>
+
+	<div id="heatmap"></div>
+
+</div>
 
 <!--Scripts go here -->
 <script src="https://d3js.org/d3.v3.min.js"></script>
