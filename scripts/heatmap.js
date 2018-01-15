@@ -4,12 +4,12 @@
 		fillheight = cellheight - 1,
 		margin = {top: 120, right: 20, bottom: 20, left: 150};
 		
-	var width = 1000 - margin.right - margin.left,
+	var width = 1100 - margin.right - margin.left,
 	  height = 1100 - margin.top - margin.bottom;
 
 	var formatDate = d3.time.format("%Y-%m-%d");
 	
-	d3.csv('guiltyplea.csv', function ( response ) {
+	d3.csv('assets/guiltyplea.csv', function ( response ) {
 
 		var data = response.map(function( item ) {
 			var newItem = {};
