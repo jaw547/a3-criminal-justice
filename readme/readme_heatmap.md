@@ -14,7 +14,6 @@ Team members include: Michael Ho, Marta Garnelo, Daniela Philipson and Jackson W
 ## Aim
 Transform a D3.js heatmap script so that it can properly visualize data on the proportion of people who are convicted through guilty pleas in each U.S. State and territory. 
 
-
 # Data and code source
 
 The data guiltypleas.csv was obtained from the website of the Federal Justice Statistics Resource Center (FJSRC), Bureau of Justice Statistics (https://www.bjs.gov/fjsrc/) and transformed in Excel and Stata.
@@ -59,4 +58,3 @@ CSS
 * Changed the range of points that would be represented in the axis through ticks (.domain) [line 142]
 * Changed the number of ticks [line 147]
 * Changed the position of the axis [line 153]
-
