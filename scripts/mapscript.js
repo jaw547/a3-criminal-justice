@@ -50,7 +50,7 @@ g.call(d3.axisBottom(x)
 
 d3.queue()
     .defer(d3.json, "https://d3js.org/us-10m.v1.json")
-    .defer(d3.tsv, "../assets/countybully.tsv", function(d) { bully.set(d.id, +d.rate); })
+    .defer(d3.tsv, "https://jaw547.github.io/a3-criminal-justice/assets/countybully.tsv", function(d) { bully.set(d.id, +d.rate); })
     .await(ready);
 
 function ready(error, us) {
