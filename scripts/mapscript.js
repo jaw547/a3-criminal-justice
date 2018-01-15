@@ -7,7 +7,7 @@ var bully = d3.map();
 var path = d3.geoPath();
 
 var x = d3.scaleLinear()
-    .domain([0, 10])
+    .domain([0, 8])
     .rangeRound([600, 860]);
 
 // Change schemeReds to schemeAnyColor
