@@ -5,7 +5,7 @@
 * Software used
 * Transformation steps
 
-# Project
+# Racial Bullying Mapping Project
 
 The 2013-14 CRDC data set was transformed to match two different D3 United States Chorpleth visualizations, "mapscript.js" and "statemapscript.js," as a part of the final project of the course DPI-691M Data and Programming for Policymakers, led by Professor Dhrumil Mehta.
 
