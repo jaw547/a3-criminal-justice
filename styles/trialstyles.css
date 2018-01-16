@@ -15,12 +15,11 @@
 
 #tooltip {	
 	position: relative;			
-	text-align: center;			
-	width: 60px;					
+	text-align: left;			
+	width: 160px;					
 	height: 28px;					
 	padding: 2px;				
 	font: 12px sans-serif;		
-	background: #2B292E;	
 	border: 0px;		
 	border-radius: 8px;			
 	pointer-events: none;			
