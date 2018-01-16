@@ -48,6 +48,10 @@
 	var colorScale = d3.scale.threshold()
 		.domain([0.85, 0.875, 0.90, 0.925, 0.95, 0.975, 1])
 		.range(["#faeaf1", "#f6d5e3", "#ecacc7", "#d9598e", "#bc2a66", "#912150", "#681839", "#3e0e22"]);
+	
+	var div = d3.select('div#heatmap').append("div")	
+		.attr("id", "tooltip")				
+		.style("opacity", 0);
 
 	var svg = d3.select('div#heatmap')
 		.append("svg")
@@ -57,14 +61,29 @@
 		.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 	var cells = svg.selectAll('rect')
-		.data(data)
+			.data(data)
 		.enter().append('g').append('rect')
-		.attr('class', 'cell')
-		.attr('width', fillwidth)
-		.attr('height', fillheight)
-		.attr('y', function(d) { return yScale(d.country); })
-		.attr('x', function(d) { return xScale(d.product); })
-		.attr('fill', function(d) { return colorScale(d.value); });
+			.attr('class', 'cell')
+			.attr('width', fillwidth)
+			.attr('height', fillheight)
+			.attr('y', function(d) { return yScale(d.country); })
+			.attr('x', function(d) { return xScale(d.product); })
+			.attr('fill', function(d) { return colorScale(d.value); });
+			
+	svg.selectAll('rect')
+		.on("mouseover", function(d) {      
+			$("#tooltip").html("State: " + d.country + "<br/>" + "Year: " + d.product + "<br/>"  + "Percentage of guilty pleas: " + d.value)  
+				//.style("left", (d3.event.pageX) + 10)     
+				//.style("top", (d3.event.pageY) + 20);    
+				var xpos = d3.event.pageX + "px";
+		   		var ypos = d3.event.pageY + "px";
+				$("#tooltip").css("left",xpos+"px").css("top",ypos+"px").animate().css("opacity",1)
+
+		})  
+		.on("mouseout", function(d) {       
+			$("#tooltip").animate({duration: 500}).css("opacity",0);
+		});
+
 
 	svg.append("g")
 		.attr("class", "y axis")
@@ -155,7 +174,7 @@
 
 	// Adding footnotes
 	 svg.append("a")
-	   	.attr("xlink:href", "https://www.bjs.gov/fjsrc/")
+		.attr("xlink:href", "https://www.bjs.gov/fjsrc/")
 		.append("text")
 		.attr({
 			'class': 'footnotes',
@@ -164,7 +183,7 @@
 			'y': height - 365
 		})
 		.text('Click for the data source - Federal Justice Statistics Resource Center (FJSRC), Bureau of Justice Statistics.');
-	    
+		
 	svg.append("a")
 		.attr("xlink:href", "https://bl.ocks.org/Bl3f/cdb5ad854b376765fa99")
 		.append("text")
