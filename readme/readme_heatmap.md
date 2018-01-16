@@ -26,6 +26,10 @@ The code for the D3 legend was obtained from the following website: https://www.
 
 * Code for axis: http://bl.ocks.org/nbremer/5cd07f2cb4ad202a9facfbd5d2bc842e 
 
+* Code for tooltip: https://codepen.io/aleave/pen/zZXJzM
+
+* Code for labels: http://jsfiddle.net/teddyrised/jLxbawhz/2/
+
 # Software and languages used
 
 Sublime text 
@@ -44,17 +48,18 @@ CSS
 5. Changed color gradient [lines 49-50]
 * Increased the number of points where the color would change/increased the number of colours (.domain)
 * Changed color palette (.range)
-6. Changed the attributes of the cells, so that they reflect the new variables representing height and width of the filled area
-7. Added axis labels [lines 86-103]
-8. Added footnotes with hyperlinks [lines 156-189]
+6. Changed the attributes of the cells, so that they reflect the new variables representing height and width of the filled area [lines 67-68]
+7. Added axis labels [lines 103-120]
+8. Added footnotes with hyperlinks [lines 174-203]
+9. Added tooltip and failed to fully replicate it, as it is still in the wrong position [lines 52-54 and 73-83].
 
 ## Legend
 
-1. Changed the width and height of the legend [lines 114-115]
-2. Changed the position of the legend [lines 116-119]
-3. Added legend label [lines 129-137] 
-4. Added legend axis [lines 139-154]
-* Changed the axis length to fit the legend width (.range) [line 141]
-* Changed the range of points that would be represented in the axis through ticks (.domain) [line 142]
-* Changed the number of ticks [line 147]
-* Changed the position of the axis [line 153]
+1. Changed the width and height of the legend [lines 131-132]
+2. Changed the position of the legend [lines 133-136]
+3. Added legend label [lines 146-154] 
+4. Added legend axis [lines 156-171]
+* Changed the axis length to fit the legend width (.range) [line 158]
+* Changed the range of points that would be represented in the axis through ticks (.domain) [line 159]
+* Changed the number of ticks [line 164]
+* Changed the position of the axis [line 170]
