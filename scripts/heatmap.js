@@ -2,7 +2,7 @@
 		cellheight = 11
 		fillwidth = cellwidth - 1,
 		fillheight = cellheight - 1,
-		margin = {top: 120, right: 20, bottom: 20, left: 150};
+		margin = {top: 120, right: 20, bottom: 20, left: 250};
 		
 	var width = 1100 - margin.right - margin.left,
 	  height = 1100 - margin.top - margin.bottom;
