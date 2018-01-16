@@ -75,10 +75,6 @@ d3.csv("https://jaw547.github.io/a3-criminal-justice/assets/RaceBullyState.csv",
       .style("stroke-width", "1")
       .style("fill", function(d) { return ramp(d.properties.value) });
 
-//get data value
-var value = d.properties.value;
-
-
 		// add a legend
 		var w = 140, h = 300;
 
