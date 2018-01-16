@@ -16,9 +16,14 @@ Team members include: Michael Ho, Marta Garnelo, Daniela Philipson and Jackson W
 Transform two D3.js choropleth scripts so that they can properly visualize data on the states and counties reporting the highest levels of student bullying by race in the United States.
 
 
-# Data and code source
+# Data sources
 Original source data located here - from Data.Gov
 https://inventory.data.gov/dataset/2acc601e-9806-4dff-b144-f8a5e7c095b8/resource/3dc84a95-526a-4b90-aacd-72f60d4fecbc/download/crdc201314csv.zip
+
+D3 Choropleth Sources (also located in the button on my website)
+* State Choropleth - https://bl.ocks.org/wboykinm/dbbe50d1023f90d4e241712395c27fb3
+
+* County Choropleth - https://bl.ocks.org/mbostock/4060606
 
 # Software and languages used
 
