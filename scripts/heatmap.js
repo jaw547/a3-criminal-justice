@@ -72,14 +72,12 @@
 			
 	svg.selectAll('rect')
 		.on("mouseover", function(d) {      
-			$("#tooltip").html("State: " + d.country + "<br/>" + "Year: " + d.product + "<br/>"  + "Percentage of guilty pleas: " + d.value)  
-				//.style("left", (d3.event.pageX) + 10)     
-				//.style("top", (d3.event.pageY) + 20);    
+			$("#tooltip").html("State: " + d.country + "<br/>" + "Year: " + d.product + "<br/>"  + "Guilty pleas / total convictions: " + d.value)  
 				var xpos = d3.event.pageX + "px";
 		   		var ypos = d3.event.pageY + "px";
 				$("#tooltip").css("left",xpos+"px").css("top",ypos+"px").animate().css("opacity",1)
-
 		})  
+		
 		.on("mouseout", function(d) {       
 			$("#tooltip").animate({duration: 500}).css("opacity",0);
 		});
