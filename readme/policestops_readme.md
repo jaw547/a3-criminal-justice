@@ -17,7 +17,7 @@ natural experiment to observe trends of this sort.
 # To clean the data, I followed the next steps:
 
 ## CSV
-* I downloaded the data into a CVS format.
+* I downloaded the data into a CSV format.
 
 ## STATA
 * Imported the data into STATA and transformed into a DTA file. This was due to Excel and R 
